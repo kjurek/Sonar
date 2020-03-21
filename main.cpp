@@ -3,17 +3,17 @@
 
 #include "sonar.h"
 
-bool isHomeKeyPressed()
+bool is_home_key_pressed()
 {
     return GetAsyncKeyState(VK_HOME) & (1 << 15);
 }
 
-bool isFKeyPressed()
+bool is_f_key_pressed()
 {
     return GetAsyncKeyState(0x46) & (1 << 15);
 }
 
-bool isInsertKeyPressed()
+bool is_insert_key_pressed()
 {
     return GetAsyncKeyState(VK_INSERT) & (1 << 15);
 }
@@ -21,9 +21,9 @@ bool isInsertKeyPressed()
 int main()
 {
     Sonar sonar;
-    while (!isHomeKeyPressed()) {
+    while (!is_home_key_pressed()) {
         Sleep(100);
-        if (isInsertKeyPressed()) {
+        if (is_insert_key_pressed()) {
             if (sonar.load()) {
                 std::cout << "Loaded succesfully" << std::endl;
             } else {
@@ -31,7 +31,7 @@ int main()
             }
         }
 
-        if (isFKeyPressed() && sonar.is_in_game()) {
+        if (is_f_key_pressed() && sonar.is_in_game()) {
             try {
                 int enemies = sonar.detect_enemies();
                 std::cout << "Detected " << enemies << " enemies." << std::endl;
