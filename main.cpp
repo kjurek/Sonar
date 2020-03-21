@@ -21,30 +21,21 @@ bool isInsertKeyPressed()
 int main()
 {
     Sonar sonar;
-    while (!isHomeKeyPressed())
-    {
+    while (!isHomeKeyPressed()) {
         Sleep(100);
-        if (isInsertKeyPressed())
-        {
-            if (sonar.load())
-            {
+        if (isInsertKeyPressed()) {
+            if (sonar.load()) {
                 std::cout << "Loaded succesfully" << std::endl;
-            }
-            else
-            {
+            } else {
                 std::cout << "Could not load" << std::endl;
             }
         }
 
-        if (isFKeyPressed() && sonar.is_in_game())
-        {
-            try
-            {
+        if (isFKeyPressed() && sonar.is_in_game()) {
+            try {
                 int enemies = sonar.detect_enemies();
                 std::cout << "Detected " << enemies << " enemies." << std::endl;
-            }
-            catch (ProcessManagerException& e)
-            {
+            } catch (ProcessManagerException &e) {
                 std::cout << e.what() << std::endl;
             }
         }

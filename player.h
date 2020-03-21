@@ -2,10 +2,7 @@
 
 #include <vector>
 
-enum Team {
-    TERRORIST = 2,
-    COUNTER_TERRORIST = 3
-};
+enum Team { TERRORIST = 2, COUNTER_TERRORIST = 3 };
 
 struct Player
 {
