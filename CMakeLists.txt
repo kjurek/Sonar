@@ -5,6 +5,6 @@ project(Sonar)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(${PROJECT_NAME} main.cpp process_manager.cpp process_manager.h csgo.hpp player.h sonar.h sonar.cpp)
+add_executable(${PROJECT_NAME} main.cpp process_manager.cpp process_manager.h player.h sonar.h sonar.cpp)
 
 target_link_libraries(${PROJECT_NAME} psapi)

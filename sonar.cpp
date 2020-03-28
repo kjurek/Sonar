@@ -1,5 +1,5 @@
 #include "sonar.h"
-#include "csgo.hpp"
+#include "hazedumper/csgo.hpp"
 #include "player.h"
 
 bool Sonar::load()
